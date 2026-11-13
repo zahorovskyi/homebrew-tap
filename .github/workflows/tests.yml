@@ -1,0 +1,24 @@
+name: Formula checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tap this repository
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/zahorovskyi"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/zahorovskyi/homebrew-tap"
+      - name: Style
+        run: brew style zahorovskyi/tap
+      - name: Audit
+        run: brew audit --strict --formula zahorovskyi/tap/attention-buddy
+      - name: Build from source
+        run: brew install --build-from-source zahorovskyi/tap/attention-buddy
+      - name: Formula test
+        run: brew test zahorovskyi/tap/attention-buddy
