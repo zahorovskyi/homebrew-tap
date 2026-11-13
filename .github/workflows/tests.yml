@@ -14,6 +14,7 @@ jobs:
         run: |
           mkdir -p "$(brew --repository)/Library/Taps/zahorovskyi"
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/zahorovskyi/homebrew-tap"
+          brew trust zahorovskyi/tap
       - name: Style
         run: brew style zahorovskyi/tap
       - name: Audit
