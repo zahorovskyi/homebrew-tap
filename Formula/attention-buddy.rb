@@ -2,8 +2,8 @@
 class AttentionBuddy < Formula
   desc "Floating macOS icon that waves when a Claude Code session needs you"
   homepage "https://github.com/zahorovskyi/attention-buddy"
-  url "https://github.com/zahorovskyi/attention-buddy/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "a5000ac9c74831b7c3f7bcb15de1acd01041ae9235592a7e734dcc6558292476"
+  url "https://github.com/zahorovskyi/attention-buddy/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "d1c2c75387acb66c0e2e05df6b3a1a251b7ac73348990a8e710ab1a109e5f161"
   license "MIT"
   head "https://github.com/zahorovskyi/attention-buddy.git", branch: "main"
 
